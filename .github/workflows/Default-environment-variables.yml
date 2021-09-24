@@ -1,0 +1,14 @@
+name: Default environment vairable
+on: push
+jobs:
+  prod-check:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
+      - run: echo "Deploying to production server on branch $GITHUB_WORKFLOW"
+      - run: echo "Deploying to production server on branch $GITHUB_RUN_ID"
+      - run: echo "Deploying to production server on branch $GITHUB_RUN_NUMBER"
+      - run: echo "Deploying to production server on branch $GITHUB_JOB"
+      - run: echo "Deploying to production server on branch $GITHUB_ACTION"
+     
